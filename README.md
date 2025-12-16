@@ -1,3 +1,18 @@
+# Havoc Fork for moderate evasion
+Latest update: December 16, 2025
+
+## Windows Defender  
+Edition	Windows 10 Pro<br>
+Version	22H2<br>
+OS Build	19045.6466<br>
+
+### Maintained By: JodisKripe
+
+![Dec-2025](./assets/Screenshots/Dec-2025.png)
+
+Use Silent_Packer for even better results.
+<hr>
+<h1>ORIGINAL README Below:</h1>
 <div align="center">
   <img width="125px" src="assets/Havoc.png" />
   <h1>Havoc</h1>

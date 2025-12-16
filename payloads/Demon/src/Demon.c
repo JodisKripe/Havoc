@@ -19,7 +19,7 @@
 #include <core/ObjectApi.h>
 
 /* Global Variables */
-SEC_DATA PINSTANCE Instance      = { 0 };
+SEC_DATA volatile PINSTANCE Instance      = { 0 };
 SEC_DATA BYTE      AgentConfig[] = CONFIG_BYTES;
 
 /*

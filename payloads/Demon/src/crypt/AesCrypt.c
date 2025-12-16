@@ -115,7 +115,10 @@ static void AddRoundKey(UINT8 round, state_t* state, const UINT8* RoundKey)
     {
         for (j = 0; j < 4; ++j)
         {
-            (*state)[i][j] ^= RoundKey[(round * Nb * 4) + (i * Nb) + j];
+            volatile int a = (round * Nb * 4);
+            volatile int b = (i * Nb) + j;
+            //(*state)[i][j] ^= RoundKey[(round * Nb * 4) + (i * Nb) + j];
+            (*state)[i][j] ^= RoundKey[ a + b ];
         }
     }
 }
@@ -239,7 +242,11 @@ void AesXCryptBuffer( PAESCTX ctx, PUINT8 buf, SIZE_T length)
             }
             bi = 0;
         }
-        buf[i] = (buf[i] ^ buffer[bi]);
+        volatile UINT8 a = buf[i];
+        volatile UINT8 b = buffer[bi];
+        //buf[i] = (buf[i] ^ buffer[bi]);
+
+        buf[i] = a ^ b;       // To get rid of the optimization issues while changing byte sequence
   }
 }
 

